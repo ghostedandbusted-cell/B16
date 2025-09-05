@@ -925,6 +925,35 @@ body.mobile-menu-open {
     -webkit-backface-visibility: hidden;
 }
 
+/* Intro animation optimizations */
+.intro-animation {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent layout shifts during intro */
+.intro-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Smooth transition between intro and main content */
+.main-content-transition {
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 /* Enhanced section backgrounds with responsive gradients */
 .section-dark {
     background: linear-gradient(180deg, 

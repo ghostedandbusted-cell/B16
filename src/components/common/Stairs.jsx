@@ -16,7 +16,16 @@ const Stairs = (props) => {
             gsap.set(pageRef.current, { opacity: 1 })
         }
     }, [])
+
     useGSAP(function () {
+        // Skip stairs animation on initial home page load to allow intro animation
+        if (currentPath === '/' && !sessionStorage.getItem('homeVisited')) {
+            sessionStorage.setItem('homeVisited', 'true')
+            gsap.set(stairParentRef.current, { display: 'none' })
+            gsap.set(pageRef.current, { opacity: 1, scale: 1 })
+            return
+        }
+
         // Ensure stairs are hidden initially
         gsap.set(stairParentRef.current, { display: 'none' })
         
