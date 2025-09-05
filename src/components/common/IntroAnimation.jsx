@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 
@@ -28,7 +28,7 @@ const IntroAnimation = ({ onComplete }) => {
     // Fade in container first
     gsap.set(containerRef.current, { opacity: 1 })
 
-    // Animate text in with elegant scale and fade
+    // Animate text in
     tl.to(textRef.current, {
       opacity: 1,
       scale: 1,
@@ -37,10 +37,10 @@ const IntroAnimation = ({ onComplete }) => {
       ease: "power3.out"
     }, 0.3)
 
-    // Hold for a moment
+    // Hold
     tl.to({}, { duration: 0.9 })
 
-    // Parallax-style exit - text moves up and fades while scaling slightly
+    // Animate text out
     tl.to(textRef.current, {
       opacity: 0,
       y: -30,
@@ -81,11 +81,9 @@ const IntroAnimation = ({ onComplete }) => {
       </div>
 
       {/* Main text */}
-      <div 
-        ref={textRef}
-        className="relative z-10 text-center px-4"
-      >
+      <div className="relative z-10 text-center px-4">
         <h1 
+          ref={textRef}
           className="text-white select-none font-bold tracking-wide"
           style={{
             fontFamily: 'Arial, sans-serif',
@@ -93,8 +91,7 @@ const IntroAnimation = ({ onComplete }) => {
             lineHeight: '1.1',
             letterSpacing: '0.05em',
             textShadow: '0 0 30px rgba(211, 253, 80, 0.3), 0 0 60px rgba(211, 253, 80, 0.1)',
-            filter: 'drop-shadow(0 4px 20px rgba(0, 0, 0, 0.8))',
-            opacity: 0
+            filter: 'drop-shadow(0 4px 20px rgba(0, 0, 0, 0.8))'
           }}
         >
           AMOURA
@@ -112,7 +109,7 @@ const IntroAnimation = ({ onComplete }) => {
         />
       </div>
 
-      {/* Subtle vignette effect */}
+      {/* Subtle vignette */}
       <div 
         className="absolute inset-0 pointer-events-none"
         style={{
