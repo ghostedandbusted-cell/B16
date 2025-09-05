@@ -25,12 +25,8 @@ const IntroAnimation = ({ onComplete }) => {
       y: 20
     })
 
-    // Fade in container
-    tl.to(containerRef.current, {
-      opacity: 1,
-      duration: 0.3,
-      ease: "power2.out"
-    })
+    // Fade in container first
+    gsap.set(containerRef.current, { opacity: 1 })
 
     // Animate text in with elegant scale and fade
     tl.to(textRef.current, {
@@ -39,10 +35,10 @@ const IntroAnimation = ({ onComplete }) => {
       y: 0,
       duration: 0.8,
       ease: "power3.out"
-    }, 0.2)
+    }, 0.3)
 
     // Hold for a moment
-    tl.to({}, { duration: 0.7 })
+    tl.to({}, { duration: 0.9 })
 
     // Parallax-style exit - text moves up and fades while scaling slightly
     tl.to(textRef.current, {
@@ -67,9 +63,10 @@ const IntroAnimation = ({ onComplete }) => {
   return (
     <div 
       ref={containerRef}
-      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black opacity-0"
+      className="fixed inset-0 z-[9999] flex items-center justify-center"
       style={{
-        background: 'linear-gradient(135deg, #0a0f1c 0%, #000000 50%, #1a1f2e 100%)'
+        background: 'linear-gradient(135deg, #0a0f1c 0%, #000000 50%, #1a1f2e 100%)',
+        opacity: 1
       }}
     >
       {/* Subtle background pattern */}
@@ -89,13 +86,15 @@ const IntroAnimation = ({ onComplete }) => {
         className="relative z-10 text-center px-4"
       >
         <h1 
-          className="font-[font2] text-white select-none"
+          className="text-white select-none font-bold tracking-wide"
           style={{
-            fontSize: 'clamp(3rem, 12vw, 8rem)',
+            fontFamily: 'Arial, sans-serif',
+            fontSize: 'clamp(4rem, 15vw, 10rem)',
             lineHeight: '1.1',
-            letterSpacing: '0.02em',
+            letterSpacing: '0.05em',
             textShadow: '0 0 30px rgba(211, 253, 80, 0.3), 0 0 60px rgba(211, 253, 80, 0.1)',
-            filter: 'drop-shadow(0 4px 20px rgba(0, 0, 0, 0.8))'
+            filter: 'drop-shadow(0 4px 20px rgba(0, 0, 0, 0.8))',
+            opacity: 0
           }}
         >
           AMOURA
@@ -105,10 +104,10 @@ const IntroAnimation = ({ onComplete }) => {
         <div 
           className="mx-auto mt-4 sm:mt-6 lg:mt-8 rounded-full"
           style={{
-            width: 'clamp(60px, 20vw, 120px)',
-            height: 'clamp(1px, 0.3vw, 2px)',
-            background: 'linear-gradient(90deg, transparent, rgba(211, 253, 80, 0.6), transparent)',
-            boxShadow: '0 0 10px rgba(211, 253, 80, 0.4)'
+            width: 'clamp(80px, 25vw, 150px)',
+            height: 'clamp(2px, 0.4vw, 3px)',
+            background: 'linear-gradient(90deg, transparent, rgba(211, 253, 80, 0.8), transparent)',
+            boxShadow: '0 0 15px rgba(211, 253, 80, 0.5)'
           }}
         />
       </div>
