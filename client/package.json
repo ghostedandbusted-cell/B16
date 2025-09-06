@@ -3,20 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.5.1",
-    "axios": "^1.6.2",
-    "lucide-react": "^0.294.0",
     "react": "^18.2.0",
-    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.2.0",
-    "react-hot-toast": "^2.4.1",
-    "react-refresh": "^0.17.0",
-    "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
-    "react-table": "^7.8.0",
-    "styled-components": "^6.1.1"
+    "react-router-dom": "^6.8.1",
+    "axios": "^1.6.2",
+    "styled-components": "^6.1.1",
+    "react-hot-toast": "^2.4.1",
+    "lucide-react": "^0.294.0"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -16,8 +16,8 @@ const SidebarContainer = styled.aside`
   left: 0;
   width: 250px;
   height: 100vh;
-  background: ${props => props.theme.colors.background};
-  border-right: 1px solid ${props => props.theme.colors.border};
+  background: white;
+  border-right: 1px solid #e2e8f0;
   z-index: 200;
   transform: ${props => props.isOpen ? 'translateX(0)' : 'translateX(-100%)'};
   transition: transform 0.3s ease;
@@ -28,8 +28,8 @@ const SidebarContainer = styled.aside`
 `;
 
 const SidebarHeader = styled.div`
-  padding: ${props => props.theme.spacing.xl};
-  border-bottom: 1px solid ${props => props.theme.colors.border};
+  padding: 2rem;
+  border-bottom: 1px solid #e2e8f0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,13 +40,13 @@ const CloseButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  padding: ${props => props.theme.spacing.sm};
-  border-radius: ${props => props.theme.borderRadius.sm};
-  color: ${props => props.theme.colors.textLight};
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  color: #64748b;
   
   &:hover {
-    background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.text};
+    background: #f1f5f9;
+    color: #1e293b;
   }
 
   @media (min-width: 769px) {
@@ -55,7 +55,7 @@ const CloseButton = styled.button`
 `;
 
 const Nav = styled.nav`
-  padding: ${props => props.theme.spacing.lg} 0;
+  padding: 1.5rem 0;
 `;
 
 const NavList = styled.ul`
@@ -71,22 +71,22 @@ const NavItem = styled.li`
 const StyledNavLink = styled(NavLink)`
   display: flex;
   align-items: center;
-  gap: ${props => props.theme.spacing.md};
-  padding: ${props => props.theme.spacing.md} ${props => props.theme.spacing.xl};
-  color: ${props => props.theme.colors.textLight};
+  gap: 1rem;
+  padding: 1rem 2rem;
+  color: #64748b;
   text-decoration: none;
   transition: all 0.2s ease;
   border-left: 3px solid transparent;
   
   &:hover {
-    background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.text};
+    background: #f1f5f9;
+    color: #1e293b;
   }
   
   &.active {
-    background: ${props => props.theme.colors.primary}10;
-    color: ${props => props.theme.colors.primary};
-    border-left-color: ${props => props.theme.colors.primary};
+    background: rgba(99, 102, 241, 0.1);
+    color: #6366f1;
+    border-left-color: #6366f1;
   }
 `;
 

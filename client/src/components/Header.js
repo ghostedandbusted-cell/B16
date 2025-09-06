@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { Menu, Settings, User } from 'lucide-react';
 
 const HeaderContainer = styled.header`
-  background: ${props => props.theme.colors.background};
-  border-bottom: 1px solid ${props => props.theme.colors.border};
-  padding: ${props => props.theme.spacing.md} ${props => props.theme.spacing.xl};
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: ${props => props.theme.shadows.sm};
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -18,7 +18,7 @@ const HeaderContainer = styled.header`
 const LeftSection = styled.div`
   display: flex;
   align-items: center;
-  gap: ${props => props.theme.spacing.md};
+  gap: 1rem;
 `;
 
 const MenuButton = styled.button`
@@ -26,13 +26,13 @@ const MenuButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  padding: ${props => props.theme.spacing.sm};
-  border-radius: ${props => props.theme.borderRadius.sm};
-  color: ${props => props.theme.colors.textLight};
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  color: #64748b;
   
   &:hover {
-    background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.text};
+    background: #f1f5f9;
+    color: #1e293b;
   }
 
   @media (max-width: 768px) {
@@ -43,49 +43,49 @@ const MenuButton = styled.button`
 const Logo = styled.h1`
   font-size: 1.5rem;
   font-weight: 700;
-  color: ${props => props.theme.colors.primary};
+  color: #6366f1;
   margin: 0;
 `;
 
 const RightSection = styled.div`
   display: flex;
   align-items: center;
-  gap: ${props => props.theme.spacing.md};
+  gap: 1rem;
 `;
 
 const IconButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  padding: ${props => props.theme.spacing.sm};
-  border-radius: ${props => props.theme.borderRadius.sm};
-  color: ${props => props.theme.colors.textLight};
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  color: #64748b;
   display: flex;
   align-items: center;
   justify-content: center;
   
   &:hover {
-    background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.text};
+    background: #f1f5f9;
+    color: #1e293b;
   }
 `;
 
 const StatusIndicator = styled.div`
   display: flex;
   align-items: center;
-  gap: ${props => props.theme.spacing.sm};
-  padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.md};
-  background: ${props => props.theme.colors.secondary};
-  border-radius: ${props => props.theme.borderRadius.md};
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f1f5f9;
+  border-radius: 0.5rem;
   font-size: 0.875rem;
-  color: ${props => props.theme.colors.textLight};
+  color: #64748b;
 `;
 
 const StatusDot = styled.div`
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: ${props => props.theme.colors.accent};
+  background: #10b981;
 `;
 
 function Header({ onMenuClick }) {

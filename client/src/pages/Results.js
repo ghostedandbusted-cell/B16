@@ -23,65 +23,65 @@ const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: ${props => props.theme.spacing.xxl};
+  margin-bottom: 3rem;
 `;
 
 const Title = styled.h1`
   font-size: 2rem;
   font-weight: 700;
-  color: ${props => props.theme.colors.text};
+  color: #1e293b;
   margin: 0;
 `;
 
 const HeaderActions = styled.div`
   display: flex;
-  gap: ${props => props.theme.spacing.md};
+  gap: 1rem;
 `;
 
 const Button = styled.button`
-  background: ${props => props.variant === 'primary' ? props.theme.colors.primary : 'transparent'};
-  color: ${props => props.variant === 'primary' ? 'white' : props.theme.colors.text};
-  border: 1px solid ${props => props.variant === 'primary' ? 'transparent' : props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.md};
-  padding: ${props => props.theme.spacing.md} ${props => props.theme.spacing.lg};
+  background: ${props => props.variant === 'primary' ? '#6366f1' : 'transparent'};
+  color: ${props => props.variant === 'primary' ? 'white' : '#1e293b'};
+  border: 1px solid ${props => props.variant === 'primary' ? 'transparent' : '#e2e8f0'};
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: ${props => props.theme.spacing.sm};
+  gap: 0.5rem;
   transition: all 0.2s ease;
   
   &:hover {
-    background: ${props => props.variant === 'primary' ? props.theme.colors.primaryDark : props.theme.colors.secondary};
+    background: ${props => props.variant === 'primary' ? '#4f46e5' : '#f1f5f9'};
   }
 `;
 
 const StatsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: ${props => props.theme.spacing.lg};
-  margin-bottom: ${props => props.theme.spacing.xxl};
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 `;
 
 const StatCard = styled.div`
-  background: ${props => props.theme.colors.background};
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.lg};
-  padding: ${props => props.theme.spacing.xl};
-  box-shadow: ${props => props.theme.shadows.sm};
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 `;
 
 const StatHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: ${props => props.theme.spacing.md};
+  margin-bottom: 1rem;
 `;
 
 const StatTitle = styled.h3`
   font-size: 0.875rem;
   font-weight: 600;
-  color: ${props => props.theme.colors.textLight};
+  color: #64748b;
   margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -90,7 +90,7 @@ const StatTitle = styled.h3`
 const StatIcon = styled.div`
   width: 32px;
   height: 32px;
-  border-radius: ${props => props.theme.borderRadius.md};
+  border-radius: 0.5rem;
   background: ${props => props.color}20;
   display: flex;
   align-items: center;
@@ -101,28 +101,28 @@ const StatIcon = styled.div`
 const StatValue = styled.div`
   font-size: 1.5rem;
   font-weight: 700;
-  color: ${props => props.theme.colors.text};
-  margin-bottom: ${props => props.theme.spacing.xs};
+  color: #1e293b;
+  margin-bottom: 0.25rem;
 `;
 
 const StatDescription = styled.p`
   font-size: 0.875rem;
-  color: ${props => props.theme.colors.textLight};
+  color: #64748b;
   margin: 0;
 `;
 
 const FiltersSection = styled.div`
-  background: ${props => props.theme.colors.background};
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.lg};
-  padding: ${props => props.theme.spacing.xl};
-  box-shadow: ${props => props.theme.shadows.sm};
-  margin-bottom: ${props => props.theme.spacing.xl};
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
 `;
 
 const FilterRow = styled.div`
   display: flex;
-  gap: ${props => props.theme.spacing.lg};
+  gap: 1.5rem;
   align-items: end;
   flex-wrap: wrap;
 `;
@@ -135,68 +135,68 @@ const FilterGroup = styled.div`
 const Label = styled.label`
   display: block;
   font-weight: 600;
-  color: ${props => props.theme.colors.text};
-  margin-bottom: ${props => props.theme.spacing.sm};
+  color: #1e293b;
+  margin-bottom: 0.5rem;
 `;
 
 const Input = styled.input`
   width: 100%;
-  padding: ${props => props.theme.spacing.md};
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.md};
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
   font-size: 0.875rem;
   
   &:focus {
     outline: none;
-    border-color: ${props => props.theme.colors.primary};
-    box-shadow: 0 0 0 3px ${props => props.theme.colors.primary}20;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
   }
 `;
 
 const Select = styled.select`
   width: 100%;
-  padding: ${props => props.theme.spacing.md};
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.md};
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
   font-size: 0.875rem;
   background: white;
   
   &:focus {
     outline: none;
-    border-color: ${props => props.theme.colors.primary};
-    box-shadow: 0 0 0 3px ${props => props.theme.colors.primary}20;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
   }
 `;
 
 const ResultsTable = styled.div`
-  background: ${props => props.theme.colors.background};
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.lg};
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
   overflow: hidden;
-  box-shadow: ${props => props.theme.shadows.sm};
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 `;
 
 const TableHeader = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-  gap: ${props => props.theme.spacing.md};
-  padding: ${props => props.theme.spacing.lg};
-  background: ${props => props.theme.colors.secondary};
-  border-bottom: 1px solid ${props => props.theme.colors.border};
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
   font-weight: 600;
-  color: ${props => props.theme.colors.text};
+  color: #1e293b;
 `;
 
 const TableRow = styled.div`
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-  gap: ${props => props.theme.spacing.md};
-  padding: ${props => props.theme.spacing.lg};
-  border-bottom: 1px solid ${props => props.theme.colors.border};
+  gap: 1rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
   align-items: center;
   
   &:hover {
-    background: ${props => props.theme.colors.secondary};
+    background: #f1f5f9;
   }
   
   &:last-child {
@@ -207,11 +207,11 @@ const TableRow = styled.div`
 const UrlCell = styled.div`
   display: flex;
   align-items: center;
-  gap: ${props => props.theme.spacing.sm};
+  gap: 0.5rem;
 `;
 
 const UrlText = styled.span`
-  color: ${props => props.theme.colors.primary};
+  color: #6366f1;
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
@@ -224,48 +224,48 @@ const UrlText = styled.span`
 const StatusCell = styled.div`
   display: flex;
   align-items: center;
-  gap: ${props => props.theme.spacing.sm};
+  gap: 0.5rem;
 `;
 
 const StatusIcon = styled.div`
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: ${props => props.status === 'success' ? props.theme.colors.accent : props.theme.colors.danger};
+  background: ${props => props.status === 'success' ? '#10b981' : '#ef4444'};
 `;
 
 const DataCell = styled.div`
   font-size: 0.875rem;
-  color: ${props => props.theme.colors.textLight};
+  color: #64748b;
 `;
 
 const TimeCell = styled.div`
   font-size: 0.875rem;
-  color: ${props => props.theme.colors.textLight};
+  color: #64748b;
 `;
 
 const ExpandButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  padding: ${props => props.theme.spacing.sm};
-  border-radius: ${props => props.theme.borderRadius.sm};
-  color: ${props => props.theme.colors.textLight};
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  color: #64748b;
   
   &:hover {
-    background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.text};
+    background: #f1f5f9;
+    color: #1e293b;
   }
 `;
 
 const ExpandedRow = styled.div`
-  background: ${props => props.theme.colors.secondary};
-  padding: ${props => props.theme.spacing.lg};
-  border-bottom: 1px solid ${props => props.theme.colors.border};
+  background: #f1f5f9;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
 `;
 
 const DataSection = styled.div`
-  margin-bottom: ${props => props.theme.spacing.lg};
+  margin-bottom: 1.5rem;
   
   &:last-child {
     margin-bottom: 0;
@@ -275,51 +275,51 @@ const DataSection = styled.div`
 const DataTitle = styled.h4`
   font-size: 0.875rem;
   font-weight: 600;
-  color: ${props => props.theme.colors.text};
-  margin: 0 0 ${props => props.theme.spacing.sm} 0;
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
 `;
 
 const DataList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: ${props => props.theme.spacing.sm};
+  gap: 0.5rem;
 `;
 
 const DataItem = styled.span`
-  background: ${props => props.theme.colors.background};
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.sm};
-  padding: ${props => props.theme.spacing.xs} ${props => props.theme.spacing.sm};
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
-  color: ${props => props.theme.colors.text};
+  color: #1e293b;
 `;
 
 const EmptyState = styled.div`
   text-align: center;
-  padding: ${props => props.theme.spacing.xxl};
-  color: ${props => props.theme.colors.textLight};
+  padding: 3rem;
+  color: #64748b;
 `;
 
 const Pagination = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: ${props => props.theme.spacing.sm};
-  padding: ${props => props.theme.spacing.lg};
-  background: ${props => props.theme.colors.background};
-  border-top: 1px solid ${props => props.theme.colors.border};
+  gap: 0.5rem;
+  padding: 1.5rem;
+  background: white;
+  border-top: 1px solid #e2e8f0;
 `;
 
 const PageButton = styled.button`
-  background: ${props => props.active ? props.theme.colors.primary : 'transparent'};
-  color: ${props => props.active ? 'white' : props.theme.colors.text};
-  border: 1px solid ${props => props.active ? 'transparent' : props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.sm};
-  padding: ${props => props.theme.spacing.sm} ${props => props.theme.spacing.md};
+  background: ${props => props.active ? '#6366f1' : 'transparent'};
+  color: ${props => props.active ? 'white' : '#1e293b'};
+  border: 1px solid ${props => props.active ? 'transparent' : '#e2e8f0'};
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   
   &:hover {
-    background: ${props => props.active ? props.theme.colors.primaryDark : props.theme.colors.secondary};
+    background: ${props => props.active ? '#4f46e5' : '#f1f5f9'};
   }
   
   &:disabled {

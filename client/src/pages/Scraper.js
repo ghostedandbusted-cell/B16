@@ -18,33 +18,33 @@ const ScraperContainer = styled.div`
 `;
 
 const Header = styled.div`
-  margin-bottom: ${props => props.theme.spacing.xxl};
+  margin-bottom: 3rem;
 `;
 
 const Title = styled.h1`
   font-size: 2rem;
   font-weight: 700;
-  color: ${props => props.theme.colors.text};
-  margin: 0 0 ${props => props.theme.spacing.md} 0;
+  color: #1e293b;
+  margin: 0 0 1rem 0;
 `;
 
 const Subtitle = styled.p`
   font-size: 1.125rem;
-  color: ${props => props.theme.colors.textLight};
+  color: #64748b;
   margin: 0;
 `;
 
 const ScraperForm = styled.div`
-  background: ${props => props.theme.colors.background};
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.lg};
-  padding: ${props => props.theme.spacing.xxl};
-  box-shadow: ${props => props.theme.shadows.sm};
-  margin-bottom: ${props => props.theme.spacing.xxl};
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 3rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  margin-bottom: 3rem;
 `;
 
 const FormSection = styled.div`
-  margin-bottom: ${props => props.theme.spacing.xl};
+  margin-bottom: 2rem;
   
   &:last-child {
     margin-bottom: 0;
@@ -54,15 +54,15 @@ const FormSection = styled.div`
 const SectionTitle = styled.h3`
   font-size: 1.25rem;
   font-weight: 600;
-  color: ${props => props.theme.colors.text};
-  margin: 0 0 ${props => props.theme.spacing.lg} 0;
+  color: #1e293b;
+  margin: 0 0 1.5rem 0;
   display: flex;
   align-items: center;
-  gap: ${props => props.theme.spacing.sm};
+  gap: 0.5rem;
 `;
 
 const FormGroup = styled.div`
-  margin-bottom: ${props => props.theme.spacing.lg};
+  margin-bottom: 1.5rem;
   
   &:last-child {
     margin-bottom: 0;
@@ -72,71 +72,56 @@ const FormGroup = styled.div`
 const Label = styled.label`
   display: block;
   font-weight: 600;
-  color: ${props => props.theme.colors.text};
-  margin-bottom: ${props => props.theme.spacing.sm};
+  color: #1e293b;
+  margin-bottom: 0.5rem;
 `;
 
 const Input = styled.input`
   width: 100%;
-  padding: ${props => props.theme.spacing.md};
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.md};
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
   font-size: 0.875rem;
   
   &:focus {
     outline: none;
-    border-color: ${props => props.theme.colors.primary};
-    box-shadow: 0 0 0 3px ${props => props.theme.colors.primary}20;
-  }
-`;
-
-const Select = styled.select`
-  width: 100%;
-  padding: ${props => props.theme.spacing.md};
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.md};
-  font-size: 0.875rem;
-  background: white;
-  
-  &:focus {
-    outline: none;
-    border-color: ${props => props.theme.colors.primary};
-    box-shadow: 0 0 0 3px ${props => props.theme.colors.primary}20;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
   }
 `;
 
 const CheckboxGroup = styled.div`
   display: flex;
   align-items: center;
-  gap: ${props => props.theme.spacing.sm};
+  gap: 0.5rem;
 `;
 
 const Checkbox = styled.input`
   width: 16px;
   height: 16px;
-  accent-color: ${props => props.theme.colors.primary};
+  accent-color: #6366f1;
 `;
 
 const CheckboxLabel = styled.label`
   font-weight: 500;
-  color: ${props => props.theme.colors.text};
+  color: #1e293b;
   cursor: pointer;
 `;
 
 const RulesPreview = styled.div`
-  background: ${props => props.theme.colors.secondary};
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.md};
-  padding: ${props => props.theme.spacing.lg};
-  margin-top: ${props => props.theme.spacing.md};
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  margin-top: 1rem;
 `;
 
 const RuleItem = styled.div`
   display: flex;
   align-items: center;
-  gap: ${props => props.theme.spacing.md};
-  padding: ${props => props.theme.spacing.sm} 0;
-  border-bottom: 1px solid ${props => props.theme.colors.border};
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
   
   &:last-child {
     border-bottom: none;
@@ -146,7 +131,7 @@ const RuleItem = styled.div`
 const RuleIcon = styled.div`
   width: 24px;
   height: 24px;
-  border-radius: ${props => props.theme.borderRadius.sm};
+  border-radius: 0.375rem;
   background: ${props => props.color}20;
   display: flex;
   align-items: center;
@@ -156,63 +141,63 @@ const RuleIcon = styled.div`
 
 const RuleName = styled.span`
   font-weight: 500;
-  color: ${props => props.theme.colors.text};
+  color: #1e293b;
 `;
 
 const RuleType = styled.span`
   font-size: 0.75rem;
-  color: ${props => props.theme.colors.textLight};
-  background: ${props => props.theme.colors.background};
+  color: #64748b;
+  background: white;
   padding: 0.25rem 0.5rem;
-  border-radius: ${props => props.theme.borderRadius.sm};
+  border-radius: 0.375rem;
   margin-left: auto;
 `;
 
 const Button = styled.button`
-  background: ${props => props.variant === 'primary' ? props.theme.colors.primary : 'transparent'};
-  color: ${props => props.variant === 'primary' ? 'white' : props.theme.colors.text};
-  border: 1px solid ${props => props.variant === 'primary' ? 'transparent' : props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.md};
-  padding: ${props => props.theme.spacing.md} ${props => props.theme.spacing.xl};
+  background: ${props => props.variant === 'primary' ? '#6366f1' : 'transparent'};
+  color: ${props => props.variant === 'primary' ? 'white' : '#1e293b'};
+  border: 1px solid ${props => props.variant === 'primary' ? 'transparent' : '#e2e8f0'};
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: ${props => props.theme.spacing.sm};
+  gap: 0.5rem;
   transition: all 0.2s ease;
   font-size: 1rem;
   
   &:hover {
-    background: ${props => props.variant === 'primary' ? props.theme.colors.primaryDark : props.theme.colors.secondary};
+    background: ${props => props.variant === 'primary' ? '#4f46e5' : '#f1f5f9'};
   }
   
   &:disabled {
-    background: ${props => props.theme.colors.textLight};
+    background: #64748b;
     cursor: not-allowed;
     opacity: 0.6;
   }
 `;
 
 const StatusCard = styled.div`
-  background: ${props => props.theme.colors.background};
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.lg};
-  padding: ${props => props.theme.spacing.xl};
-  box-shadow: ${props => props.theme.shadows.sm};
-  margin-bottom: ${props => props.theme.spacing.xl};
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
 `;
 
 const StatusHeader = styled.div`
   display: flex;
   align-items: center;
-  gap: ${props => props.theme.spacing.md};
-  margin-bottom: ${props => props.theme.spacing.lg};
+  gap: 1rem;
+  margin-bottom: 1.5rem;
 `;
 
 const StatusIcon = styled.div`
   width: 40px;
   height: 40px;
-  border-radius: ${props => props.theme.borderRadius.md};
+  border-radius: 0.5rem;
   background: ${props => props.color}20;
   display: flex;
   align-items: center;
@@ -223,35 +208,35 @@ const StatusIcon = styled.div`
 const StatusTitle = styled.h3`
   font-size: 1.25rem;
   font-weight: 600;
-  color: ${props => props.theme.colors.text};
+  color: #1e293b;
   margin: 0;
 `;
 
 const StatusDescription = styled.p`
-  color: ${props => props.theme.colors.textLight};
+  color: #64748b;
   margin: 0;
 `;
 
 const ProgressBar = styled.div`
   width: 100%;
   height: 8px;
-  background: ${props => props.theme.colors.secondary};
-  border-radius: ${props => props.theme.borderRadius.sm};
+  background: #f1f5f9;
+  border-radius: 0.375rem;
   overflow: hidden;
-  margin-top: ${props => props.theme.spacing.md};
+  margin-top: 1rem;
 `;
 
 const ProgressFill = styled.div`
   height: 100%;
-  background: ${props => props.theme.colors.primary};
+  background: #6366f1;
   width: ${props => props.progress}%;
   transition: width 0.3s ease;
 `;
 
 const EmptyState = styled.div`
   text-align: center;
-  padding: ${props => props.theme.spacing.xxl};
-  color: ${props => props.theme.colors.textLight};
+  padding: 3rem;
+  color: #64748b;
 `;
 
 const ruleTypeColors = {

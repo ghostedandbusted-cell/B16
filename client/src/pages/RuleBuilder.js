@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import styled from 'styled-components';
 import { 
   Plus, 
   Trash2, 
   Edit2, 
-  GripVertical, 
   Save,
-  Eye,
-  Code,
-  Search,
   Mail,
   Phone,
   MapPin,
-  Share2
+  Share2,
+  Code,
+  Search
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
@@ -26,66 +23,55 @@ const Header = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: ${props => props.theme.spacing.xxl};
+  margin-bottom: 3rem;
 `;
 
 const Title = styled.h1`
   font-size: 2rem;
   font-weight: 700;
-  color: ${props => props.theme.colors.text};
+  color: #1e293b;
   margin: 0;
 `;
 
 const HeaderActions = styled.div`
   display: flex;
-  gap: ${props => props.theme.spacing.md};
+  gap: 1rem;
 `;
 
 const Button = styled.button`
-  background: ${props => props.variant === 'primary' ? props.theme.colors.primary : 'transparent'};
-  color: ${props => props.variant === 'primary' ? 'white' : props.theme.colors.text};
-  border: 1px solid ${props => props.variant === 'primary' ? 'transparent' : props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.md};
-  padding: ${props => props.theme.spacing.md} ${props => props.theme.spacing.lg};
+  background: ${props => props.variant === 'primary' ? '#6366f1' : 'transparent'};
+  color: ${props => props.variant === 'primary' ? 'white' : '#1e293b'};
+  border: 1px solid ${props => props.variant === 'primary' ? 'transparent' : '#e2e8f0'};
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
   font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: ${props => props.theme.spacing.sm};
+  gap: 0.5rem;
   transition: all 0.2s ease;
   
   &:hover {
-    background: ${props => props.variant === 'primary' ? props.theme.colors.primaryDark : props.theme.colors.secondary};
+    background: ${props => props.variant === 'primary' ? '#4f46e5' : '#f1f5f9'};
   }
 `;
 
 const RulesList = styled.div`
-  background: ${props => props.theme.colors.background};
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.lg};
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
   overflow: hidden;
-  box-shadow: ${props => props.theme.shadows.sm};
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 `;
 
 const RuleItem = styled.div`
   display: flex;
   align-items: center;
-  padding: ${props => props.theme.spacing.lg};
-  border-bottom: 1px solid ${props => props.theme.colors.border};
-  background: ${props => props.isDragging ? props.theme.colors.secondary : 'transparent'};
+  padding: 1.5rem;
+  border-bottom: 1px solid #e2e8f0;
   
   &:last-child {
     border-bottom: none;
-  }
-`;
-
-const DragHandle = styled.div`
-  cursor: grab;
-  color: ${props => props.theme.colors.textLight};
-  margin-right: ${props => props.theme.spacing.md};
-  
-  &:active {
-    cursor: grabbing;
   }
 `;
 
@@ -93,13 +79,13 @@ const RuleInfo = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
-  gap: ${props => props.theme.spacing.md};
+  gap: 1rem;
 `;
 
 const RuleIcon = styled.div`
   width: 40px;
   height: 40px;
-  border-radius: ${props => props.theme.borderRadius.md};
+  border-radius: 0.5rem;
   background: ${props => props.color}20;
   display: flex;
   align-items: center;
@@ -114,35 +100,35 @@ const RuleDetails = styled.div`
 const RuleName = styled.h3`
   font-size: 1rem;
   font-weight: 600;
-  color: ${props => props.theme.colors.text};
-  margin: 0 0 ${props => props.theme.spacing.xs} 0;
+  color: #1e293b;
+  margin: 0 0 0.25rem 0;
 `;
 
 const RuleDescription = styled.p`
   font-size: 0.875rem;
-  color: ${props => props.theme.colors.textLight};
+  color: #64748b;
   margin: 0;
 `;
 
 const RuleActions = styled.div`
   display: flex;
-  gap: ${props => props.theme.spacing.sm};
+  gap: 0.5rem;
 `;
 
 const ActionButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  padding: ${props => props.theme.spacing.sm};
-  border-radius: ${props => props.theme.borderRadius.sm};
-  color: ${props => props.theme.colors.textLight};
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  color: #64748b;
   display: flex;
   align-items: center;
   justify-content: center;
   
   &:hover {
-    background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.text};
+    background: #f1f5f9;
+    color: #1e293b;
   }
 `;
 
@@ -160,9 +146,9 @@ const Modal = styled.div`
 `;
 
 const ModalContent = styled.div`
-  background: ${props => props.theme.colors.background};
-  border-radius: ${props => props.theme.borderRadius.lg};
-  padding: ${props => props.theme.spacing.xxl};
+  background: white;
+  border-radius: 0.75rem;
+  padding: 3rem;
   width: 90%;
   max-width: 600px;
   max-height: 90vh;
@@ -173,13 +159,13 @@ const ModalHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: ${props => props.theme.spacing.xl};
+  margin-bottom: 2rem;
 `;
 
 const ModalTitle = styled.h2`
   font-size: 1.5rem;
   font-weight: 600;
-  color: ${props => props.theme.colors.text};
+  color: #1e293b;
   margin: 0;
 `;
 
@@ -187,121 +173,121 @@ const CloseButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  padding: ${props => props.theme.spacing.sm};
-  border-radius: ${props => props.theme.borderRadius.sm};
-  color: ${props => props.theme.colors.textLight};
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  color: #64748b;
   
   &:hover {
-    background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.text};
+    background: #f1f5f9;
+    color: #1e293b;
   }
 `;
 
 const FormGroup = styled.div`
-  margin-bottom: ${props => props.theme.spacing.lg};
+  margin-bottom: 1.5rem;
 `;
 
 const Label = styled.label`
   display: block;
   font-weight: 600;
-  color: ${props => props.theme.colors.text};
-  margin-bottom: ${props => props.theme.spacing.sm};
+  color: #1e293b;
+  margin-bottom: 0.5rem;
 `;
 
 const Input = styled.input`
   width: 100%;
-  padding: ${props => props.theme.spacing.md};
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.md};
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
   font-size: 0.875rem;
   
   &:focus {
     outline: none;
-    border-color: ${props => props.theme.colors.primary};
-    box-shadow: 0 0 0 3px ${props => props.theme.colors.primary}20;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
   }
 `;
 
 const Select = styled.select`
   width: 100%;
-  padding: ${props => props.theme.spacing.md};
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.md};
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
   font-size: 0.875rem;
   background: white;
   
   &:focus {
     outline: none;
-    border-color: ${props => props.theme.colors.primary};
-    box-shadow: 0 0 0 3px ${props => props.theme.colors.primary}20;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
   }
 `;
 
 const TextArea = styled.textarea`
   width: 100%;
-  padding: ${props => props.theme.spacing.md};
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.md};
+  padding: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
   font-size: 0.875rem;
   min-height: 120px;
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
   
   &:focus {
     outline: none;
-    border-color: ${props => props.theme.colors.primary};
-    box-shadow: 0 0 0 3px ${props => props.theme.colors.primary}20;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
   }
 `;
 
 const PresetRules = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: ${props => props.theme.spacing.md};
-  margin-bottom: ${props => props.theme.spacing.xl};
+  gap: 1rem;
+  margin-bottom: 2rem;
 `;
 
 const PresetCard = styled.div`
-  border: 1px solid ${props => props.theme.colors.border};
-  border-radius: ${props => props.theme.borderRadius.md};
-  padding: ${props => props.theme.spacing.lg};
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
   cursor: pointer;
   transition: all 0.2s ease;
   
   &:hover {
-    border-color: ${props => props.theme.colors.primary};
-    box-shadow: ${props => props.theme.shadows.sm};
+    border-color: #6366f1;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   }
 `;
 
 const PresetIcon = styled.div`
   width: 32px;
   height: 32px;
-  border-radius: ${props => props.theme.borderRadius.sm};
+  border-radius: 0.375rem;
   background: ${props => props.color}20;
   display: flex;
   align-items: center;
   justify-content: center;
   color: ${props => props.color};
-  margin-bottom: ${props => props.theme.spacing.sm};
+  margin-bottom: 0.5rem;
 `;
 
 const PresetTitle = styled.h4`
   font-size: 0.875rem;
   font-weight: 600;
-  color: ${props => props.theme.colors.text};
-  margin: 0 0 ${props => props.theme.spacing.xs} 0;
+  color: #1e293b;
+  margin: 0 0 0.25rem 0;
 `;
 
 const PresetDescription = styled.p`
   font-size: 0.75rem;
-  color: ${props => props.theme.colors.textLight};
+  color: #64748b;
   margin: 0;
 `;
 
 const EmptyState = styled.div`
   text-align: center;
-  padding: ${props => props.theme.spacing.xxl};
-  color: ${props => props.theme.colors.textLight};
+  padding: 3rem;
+  color: #64748b;
 `;
 
 const ruleTypes = [
@@ -357,17 +343,6 @@ function RuleBuilder({ rules, onAddRule, onUpdateRule, onDeleteRule }) {
     script: '',
     description: ''
   });
-
-  const handleDragEnd = (result) => {
-    if (!result.destination) return;
-    
-    const items = Array.from(rules);
-    const [reorderedItem] = items.splice(result.source.index, 1);
-    items.splice(result.destination.index, 0, reorderedItem);
-    
-    // Update order in parent component
-    // This would require a reorder function in the parent
-  };
 
   const handleAddRule = () => {
     setEditingRule(null);
@@ -469,57 +444,36 @@ function RuleBuilder({ rules, onAddRule, onUpdateRule, onDeleteRule }) {
             <p>No rules configured yet. Add your first rule to get started!</p>
           </EmptyState>
         ) : (
-          <DragDropContext onDragEnd={handleDragEnd}>
-            <Droppable droppableId="rules">
-              {(provided) => (
-                <div {...provided.droppableProps} ref={provided.innerRef}>
-                  {rules.map((rule, index) => {
-                    const IconComponent = getRuleIcon(rule.type);
-                    const color = getRuleColor(rule.type);
-                    
-                    return (
-                      <Draggable key={rule.id} draggableId={rule.id} index={index}>
-                        {(provided, snapshot) => (
-                          <RuleItem
-                            ref={provided.innerRef}
-                            {...provided.draggableProps}
-                            isDragging={snapshot.isDragging}
-                          >
-                            <DragHandle {...provided.dragHandleProps}>
-                              <GripVertical size={16} />
-                            </DragHandle>
-                            
-                            <RuleInfo>
-                              <RuleIcon color={color}>
-                                <IconComponent size={20} />
-                              </RuleIcon>
-                              
-                              <RuleDetails>
-                                <RuleName>{rule.name}</RuleName>
-                                <RuleDescription>
-                                  {rule.description || `${rule.type} - ${rule.pattern || rule.selector || 'Custom script'}`}
-                                </RuleDescription>
-                              </RuleDetails>
-                            </RuleInfo>
-                            
-                            <RuleActions>
-                              <ActionButton onClick={() => handleEditRule(rule)} title="Edit">
-                                <Edit2 size={16} />
-                              </ActionButton>
-                              <ActionButton onClick={() => onDeleteRule(rule.id)} title="Delete">
-                                <Trash2 size={16} />
-                              </ActionButton>
-                            </RuleActions>
-                          </RuleItem>
-                        )}
-                      </Draggable>
-                    );
-                  })}
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-          </DragDropContext>
+          rules.map((rule, index) => {
+            const IconComponent = getRuleIcon(rule.type);
+            const color = getRuleColor(rule.type);
+            
+            return (
+              <RuleItem key={rule.id || index}>
+                <RuleInfo>
+                  <RuleIcon color={color}>
+                    <IconComponent size={20} />
+                  </RuleIcon>
+                  
+                  <RuleDetails>
+                    <RuleName>{rule.name}</RuleName>
+                    <RuleDescription>
+                      {rule.description || `${rule.type} - ${rule.pattern || rule.selector || 'Custom script'}`}
+                    </RuleDescription>
+                  </RuleDetails>
+                </RuleInfo>
+                
+                <RuleActions>
+                  <ActionButton onClick={() => handleEditRule(rule)} title="Edit">
+                    <Edit2 size={16} />
+                  </ActionButton>
+                  <ActionButton onClick={() => onDeleteRule(rule.id)} title="Delete">
+                    <Trash2 size={16} />
+                  </ActionButton>
+                </RuleActions>
+              </RuleItem>
+            );
+          })
         )}
       </RulesList>
 
